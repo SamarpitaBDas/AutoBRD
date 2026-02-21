@@ -1,0 +1,5 @@
+PyQt5==5.15.10
+PyQt5-sip==12.13.0
+PyQtWebEngine==5.15.6
+requests==2.31.0
+python-dotenv==1.0.0
