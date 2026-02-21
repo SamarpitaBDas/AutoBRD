@@ -1,1 +1,10 @@
-/frontend/venv
+frontend/venv/
+backend/venv/
+venv/
+backend/db.sqlite3
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.vscode/
+.DS_Store
