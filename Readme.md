@@ -1,117 +1,108 @@
-# BRD Generator – Setup Guide
+# BRD Generator – AI-Powered Business Requirements Document System
 
-A Django + ML-powered Business Requirements Document (BRD) Generator with optional Celery background processing and a PyQt frontend.
+An intelligent Business Requirements Document (BRD) Generator built with Django, Machine Learning, and a PyQt frontend.
 
----
-
-# 🚀 Quick Setup (Development Mode)
-
-## 1️⃣ Prerequisites
-
-Make sure you have:
-
-* Python **3.8+**
-* pip
-* Redis (optional, for Celery)
-
-Check:
-
-```bash
-python --version
-pip --version
-```
+The system extracts, classifies, and organizes business requirements from unstructured sources such as emails, meeting notes, and documents into structured BRDs.
 
 ---
 
-# 📦 Installation
+# Video Demo
 
-## Option A — Automated (Linux/Mac)
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/gSs_GQdMHMs" 
+    title="BRD Generator Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>
 
-```bash
-chmod +x setup.sh
-./setup.sh
+If the video does not render in your viewer, watch it directly here:  
+👉 https://youtu.be/gSs_GQdMHMs
+
+---
+
+# Project Overview
+
+This system automates the process of:
+
+- Extracting requirements from raw text sources
+- Classifying them into:
+  - Functional Requirements
+  - Business Requirements
+  - Non-Functional Requirements
+- Assigning priorities (High / Medium / Low)
+- Identifying stakeholders
+- Generating structured BRD documents
+
+It significantly reduces manual documentation effort in software projects.
+
+---
+
+# Architecture
+
+Frontend: **PyQt Desktop Application**  
+Backend: **Django + Django REST Framework**  
+ML Layer: **Scikit-learn / Transformers / Sentence-Transformers**  
+Async Processing (Optional): **Celery + Redis**
+
 ```
 
-## Option B — Automated (Windows)
+PyQt Frontend  →  Django REST API  →  ML Processing Engine
+↓
+SQLite Database
 
-```cmd
-setup.bat
 ```
 
-## Option C — Manual Setup
+---
 
-### Step 1 — Create Virtual Environment
+# Key Features
+
+✅ Automated requirement extraction  
+✅ Requirement classification (FR / BR / NFR)  
+✅ Stakeholder identification  
+✅ Priority detection  
+✅ BRD document generation  
+✅ Admin dashboard  
+✅ Background ML processing (Celery optional)  
+✅ REST API architecture  
+
+---
+
+# Tech Stack
+
+- Python
+- Django 4.2
+- Django REST Framework
+- Celery
+- Redis
+- Scikit-learn
+- Transformers
+- Sentence-Transformers
+- PyQt
+- SQLite
+
+---
+
+# Installation
+
+See full setup instructions here:
+
+**SETUP.md**
+
+Quick start:
 
 ```bash
 python -m venv venv
-```
-
-### Step 2 — Activate
-
-**Linux / Mac**
-
-```bash
-source venv/bin/activate
-```
-
-**Windows**
-
-```cmd
-venv\Scripts\activate
-```
-
----
-
-### Step 3 — Install Dependencies
-
-```bash
+source venv/bin/activate  # or venv\Scripts\activate (Windows)
 pip install -r requirements.txt
-pip install -r frontend_requirements.txt
-```
-
-First installation may take time (ML models + torch).
-
----
-
-### Step 4 — Setup Database
-
-```bash
 cd backend
 python manage.py migrate
-```
-
----
-
-### Step 5 — Configure Environment Variables
-
-Copy environment template:
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` if needed.
-
----
-
-# Running the Application
-
-## Terminal 1 — Start Django Backend
-
-```bash
-cd backend
 python manage.py runserver
-```
+````
 
-Backend runs at:
-
-```
-http://localhost:8000
-```
-
----
-
-## Terminal 2 — Start Frontend (PyQt)
+Then run frontend:
 
 ```bash
 python frontend/main.py
@@ -119,57 +110,7 @@ python frontend/main.py
 
 ---
 
-# Optional: Enable Background Processing (Celery)
-
-If using background ML processing:
-
-### Terminal 3 — Start Redis
-
-```bash
-redis-server
-```
-
-### Terminal 4 — Start Celery Worker
-
-```bash
-cd backend
-celery -A brd_backend worker --loglevel=info
-```
-
----
-
-# Common Commands
-
-### Create Admin User
-
-```bash
-python manage.py createsuperuser
-```
-
-### Run Migrations
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-### Run on Different Port
-
-```bash
-python manage.py runserver 8001
-```
-
----
-
-# First Run Notes
-
-* ML models may download on first execution (2–3 GB)
-* Initial startup may take 5–10 minutes
-* Subsequent runs are much faster (cached locally)
-
----
-
-# Project Structure
+# 📁 Project Structure
 
 ```
 brd_generator_project/
@@ -181,33 +122,36 @@ brd_generator_project/
 │   └── integrations/
 ├── frontend/
 │   └── main.py
-├── .env
 ├── requirements.txt
 ├── frontend_requirements.txt
+├── SETUP.md
 └── README.md
 ```
 
 ---
 
-# Troubleshooting
+# Example Output
 
-### Port Already in Use
+The system generates structured BRDs including:
 
-```bash
-python manage.py runserver 8001
-```
+* Executive Summary
+* Business Objectives
+* Stakeholder Analysis
+* Functional Requirements
+* Non-Functional Requirements
 
-### Module Not Found
-
-```bash
-pip install -r requirements.txt
-```
-
-### Database Locked
-
-Stop all Django processes and restart.
+Automatically extracted from raw stakeholder communications.
 
 ---
 
-# Sources
-image assets from https://remixicon.com/
+# Notes
+
+* ML models may download during first execution
+* Initial run may take several minutes
+
+---
+
+# Assets
+
+UI icons sourced from:
+[https://remixicon.com/](https://remixicon.com/)
