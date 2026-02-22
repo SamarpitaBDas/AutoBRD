@@ -7,19 +7,7 @@ The system extracts, classifies, and organizes business requirements from unstru
 ---
 
 # Video Demo
-
-<iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/gSs_GQdMHMs" 
-    title="BRD Generator Demo"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-</iframe>
-
-If the video does not render in your viewer, watch it directly here:  
-👉 https://youtu.be/gSs_GQdMHMs
+https://youtu.be/gSs_GQdMHMs
 
 ---
 
