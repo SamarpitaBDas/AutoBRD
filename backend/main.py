@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 # ── Config ────────────────────────────────────────────────────────────────────
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL_NAME = "gemini-2.0-flash-exp"  # or "gemini-1.5-flash"
+MODEL_NAME = "gemini-2.5-flash" 
 
 if not GEMINI_API_KEY:
     logger.warning("GEMINI_API_KEY not set — AI responses will be mocked")

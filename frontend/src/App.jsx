@@ -312,7 +312,7 @@ export default function App() {
         <div className="chat-panel">
           <div className="panel-header">
             <span className="label">ai assistant</span>
-            <span className="model-badge">gemini-2.0-flash</span>
+            <span className="model-badge">gemini-2.5-flash</span>
           </div>
 
           <div className="messages">
